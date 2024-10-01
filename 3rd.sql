@@ -87,7 +87,23 @@ select e.name, e.lastname from employees e
 join departments d on e.department = d.code
 where d.budget = (select min(budget) from departments)
 
-
 select customers.name, customers.lastname, employees.name, employees.lastname
 from employees, customers
 where employees.city = 'Almaty' and customers.city = 'Almaty'
+
+select * from departments
+where budget > 60000
+order by budget, code desc
+
+select budget * 0.1 from departments
+where budget = (select min(budget) from departments)
+
+update employees
+set department = 14 where department = 77;
+
+delete from employees
+where department = 14
+
+delete from employees
+
+select * from employees
