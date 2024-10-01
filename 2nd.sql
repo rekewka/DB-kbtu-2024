@@ -32,7 +32,7 @@ values (5, 10000)
 
 insert into countries default values
 
-create table countries_new (like countries including all)
+create table countries_new (like countries)
 
 insert into countries_new (select * from countries)
 

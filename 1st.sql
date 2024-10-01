@@ -9,17 +9,6 @@ create table users(
 ALTER TABLE users
 ADD isadmin INT DEFAULT 0;
 
-ALTER TABLE users
-alter column isadmin drop default
-
-ALTER TABLE users
-ALTER COLUMN isadmin
-TYPE boolean using isadmin::boolean;
-
-ALTER TABLE users
-ALTER column isadmin set default false
-ALTER TABLE users
-ADD CONSTRAINT users_pkey PRIMARY KEY (id);
 
 create table tasks(
     id SERIAL,
@@ -27,5 +16,11 @@ create table tasks(
     user_id int
 );
 
+alter table tasks
+alter column name
+set default  '5';
+
 drop table tasks
 drop database lab1
+
+
