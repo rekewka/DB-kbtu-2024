@@ -70,4 +70,10 @@ where value < 150
 delete from boxes
 where warehouse in (select code_integer from warehouses
 where location = 'New York')
-returning *
+returning *;
+
+update boxes
+set value = value + 85 where value in (select value from boxes order by value limit 3)
+
+select value from boxes
+order by value
