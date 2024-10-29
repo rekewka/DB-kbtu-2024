@@ -72,3 +72,11 @@ select count(customers.grade) from customers
 select * from customers where cust_name is not NULL
 
 select max(customers.grade) from customers
+
+select * from orders
+
+select * from salesman
+
+select c.city, sum(purch_amt) from orders o join customers c on c.customer_id = o.customer_id
+group by c.city;
+
